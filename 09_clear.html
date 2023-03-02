@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+        <title>Arman Sharif</title>
+        
+        <style>
+            div {
+              border: 3px solid #4CAF50;
+              padding: 5px;
+            }
+            
+            .img1 {
+              float: right;
+            }
+            
+            .img2 {
+              float: right;
+            }
+            
+            .clearfix::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <h2>Without Clearfix</h2>
+        <div>
+            <img class="img1" src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg" alt="Pineapple" width="170" height="170">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+        </div>
+
+        <h2 style="clear:right">With New Modern Clearfix</h2>
+
+        <div class="clearfix">
+            <img class="img2" src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg" alt="Pineapple" width="170" height="170">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+        </div>
+
+    </body>
+</html>
