@@ -47,6 +47,37 @@
       top: 0;
       left: 0;
     }
+
+    .showcase {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      color: white;
+    }
+
+    .showcase img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .showcase .overlay {
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 39, 6, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
     @media ( max-width: 425px ) {
       .header1{
         background-position: right;
@@ -69,6 +100,14 @@
   </section>
   <section style="font-size: 33px; color:white;width: 100%;height: 50vh;background: linear-gradient( to right, rgb(223, 13, 177) 0%, rgb(223, 13, 177) 50%, rgb(1, 136, 118) 50%,  rgb(1, 136, 118) 100%);display: flex;justify-content: center;align-items: center;">
     <h3 style="background: #9900ff;padding: 30px;border-radius: 10px;">Md. Arman Sharif</h3>
+  </section>
+
+  <section class="showcase">
+    <img src="https://www.state.gov/wp-content/uploads/2019/07/Bangladesh-2109x1406.png" alt="Picture">
+    <div class="overlay">
+      <h1>Hello Everyone</h1> <br>
+      <p>i am web developer</p>
+    </div>
   </section>
 
         </textarea>
