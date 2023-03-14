@@ -12,18 +12,68 @@
     <div class="container pt-4">
       <div class="row">
         <textarea cols="200" rows="20" class="form-control">                                                      
-<style>
 
+  
+<!-- grid-template-areas -->
+   
+<!-- <style>
+.container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+}
+</style>
+<div class="container">
+  <div style="grid-area: header;background-color: red;height:20vh;"></div>
+  <div style="grid-area: menu;background-color: green;"></div>
+  <div style="grid-area: main;background-color: white;height:50vh;"></div>  
+  <div style="grid-area: right;background-color: blue;"></div>
+  <div style="grid-area: footer;background-color: red;height:10vh;"></div>
+</div>  -->
+ 
+          
+          
+<!-- grid-template-columns -->
+          
+<!-- <style>
 .container {
   display: grid;
   grid-template-columns: auto auto auto;
 }
-.container div{
-    height:100px;
+.container div {
+  padding:8vh 0;
 }
-
-</style>
+</style>        
+<div class="container">
+  <div style="background:red;grid-column-start: 1;grid-column-end: 3;"></div>
+  <div style="background:green;"></div>
+  <div style="background:black;"></div>  
+  <div style="background:white;"></div>
+  <div style="background:blue;"></div> 
+  <div style="background:red;"></div>  
+  <div style="background:green;grid-column-start: 2;grid-column-end: 4;"></div>
+  <div style="background:black;grid-row-start: 4;grid-row-end: 6;"></div>  
+  <div style="background:white;"></div>
+  <div style="background:blue;"></div>  
+  <div style="background:blue;"></div>
+  <div style="background:green;"></div>   
+</div> -->
+  
           
+          
+<style>
+.container {
+  display: grid;
+  /*display: inline-grid;*/
+  /*gap: 50px 50px;*/
+  grid-template-columns: auto auto auto;
+}
+.container div{
+    padding:10vh 0;
+}
+</style>
 <div class="container">
   <div style="background:red;"></div>
   <div style="background:green;"></div>
@@ -35,6 +85,7 @@
   <div style="background:green;"></div>
   <div style="background:blue;"></div> 
 </div>
+
         </textarea>
       </div>
     </div>
