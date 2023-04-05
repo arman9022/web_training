@@ -212,8 +212,20 @@ onscroll=""
     <hr>
   
 JQUERY
-$(.box1 p, h1).text('Hello');
+$('.box1 p, h1').text('Hello');
+$("#box2").css('color','red');
 
+  <hr>
+  
+  <p id="demo7">Hello Arman</p>
+  <button onclick="hide()">Hide</button>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script>
+    function hide(){
+      $("#demo7").remove();
+    }
+  </script>
+  
         </textarea>
       </div>
     </div>
