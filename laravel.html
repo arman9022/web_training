@@ -23,6 +23,8 @@ php artisan serve
 php artisan --version
           
 ROUTE
+use App\Http\Controllers\CrudController; 
+          
 Route::get('/', function () { return view('welcome');} );
 Route::view('/','welcome');
 Route::get('/create/profile', [ProfileController::class, 'create'])->name('create.profile');
@@ -100,11 +102,17 @@ php artisan config:cache
 
 MASTERING
 @yield('content')
+          
 @include('admin.partials.navbar')
+          
 @extends('admin.master')      
 @section('content')
 @endsection
 
+BLADE          
+{{$data->title}}
+<img src="{{ asset('images/blog/'.$all_data->image) }}" style="width:100px;height:100px;"> 
+active = {{'webDevelopment'==request()->path()?'active':''}}
         </textarea>
         <div class="col-12 pt-2">
           <a href="https://drive.google.com/file/d/1aGivZ3yuVzC8WrHTq0ZeZIW855T1zQY8/view?usp=sharing" target="_blank" class="btn btn-outline-success fw-bold">
