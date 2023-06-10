@@ -61,6 +61,7 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Mobile</th>
                             <th scope="col" class="text-end">Action</th>
                         </tr>
                     </thead>
@@ -89,6 +90,7 @@
                                 <tr>
                                     <td>$row[id]</td>
                                     <td>$row[name]</td>
+                                    <td>$row[mobile]</td>
                                     <td class='text-end'>
                                         <a class='btn btn-success' href='/myshop/edit.php?id=$row[id]'>Edit</a>
                                         <a class='btn btn-danger' href='/myshop/delete.php?id=$row[id]'>Delete</a>
@@ -134,21 +136,23 @@
     $connection = new mysqli($servername, $username, $password, $database);
 
     $name = "";
+    $mobile = "";
 
     $errorMessage = "";
     $successMessage = "";
 
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $name = $_POST["name"];
+        $mobile = $_POST["mobile"];
     }
 
     do{
-        if(empty($name)){
+        if(empty($name) || empty($mobile) ){
             $errorMessage = "All the fields are required";
             break;
         }
 
-        $sql = "INSERT INTO clients (name)"."VALUES ('$name')";
+        $sql = "INSERT INTO clients (name,mobile)"."VALUES ('$name','$mobile')";
         $result = $connection->query($sql);
 
         if(!$result){
@@ -157,6 +161,7 @@
         }
 
         $name = "";
+        $mobile = "";
 
         $successMessage = "Client added correctly";
 
@@ -190,6 +195,8 @@
                 <form action="#" method="post">
                     <label for="">Name : </label>
                     <input type="text" name="name" class="form-control mb-3" value="<?php echo $name; ?>">
+                    <label for="">Mobile : </label>
+                    <input type="text" name="mobile" class="form-control mb-3" value="<?php echo $mobile; ?>">
                     <?php 
                         if(!empty($successMessage)){
                             echo "
@@ -237,6 +244,7 @@
 
     $id = "";
     $name = "";
+    $mobile = "";
 
     $errorMessage = "";
     $successMessage = "";
@@ -259,17 +267,21 @@
         }
 
         $name = $row["name"];
-    } else{
+        $mobile = $row["mobile"];
+
+    } 
+    else{
         $id = $_POST["id"];
         $name = $_POST["name"];
+        $mobile = $_POST["mobile"];
 
         do{
-            if(empty($id) || empty($name)){
+            if(empty($id) || empty($name) || empty($mobile)){
                 $errorMessage = "All the fields are required";
                 break;
             }
 
-            $sql = "UPDATE clients "."SET name = '$name'"."WHERE id = $id";
+            $sql = "UPDATE clients "."SET name = '$name', mobile = '$mobile'"."WHERE id = $id";
             $result = $connection->query($sql);
             if(!$result){
                 $errorMessage = "Invalid query: ".$connection->error;
@@ -309,6 +321,8 @@
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <label for="">Name : </label>
                     <input type="text" name="name" class="form-control mb-3" value="<?php echo $name; ?>">
+                    <label for="">Mobile : </label>
+                    <input type="text" name="mobile" class="form-control mb-3" value="<?php echo $mobile; ?>">
                     <?php 
                         if(!empty($successMessage)){
                             echo "
